@@ -9,7 +9,7 @@ app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: true }))
 MongoHelper.connect();
 let indexRoute = require('./routes/index');
-
+let userRoute = require('./routes/users');
 
 // // #1 Just return a text
 // app.get('/', (req, res) => {
@@ -35,6 +35,7 @@ let indexRoute = require('./routes/index');
 // });
 
 app.use('/', indexRoute);
+app.use('/users', userRoute);
 
 
 

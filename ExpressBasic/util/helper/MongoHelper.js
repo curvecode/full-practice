@@ -1,4 +1,5 @@
 const MongoClient = require('mongodb').MongoClient;
+const ObjectID = require('mongodb').ObjectID;
 
 const url = 'mongodb://localhost:27017';
 const dbName = 'simpleDB';
@@ -22,6 +23,7 @@ const MongoHelper = {
                 const db = client.db(dbName);
 
                 // client.close();
+                // db.close();
             }
         });
     },
@@ -37,6 +39,7 @@ const MongoHelper = {
                             console.log(data);
                             resolve(result.ops || data);
                         } else {
+                            // db.close();
                             reject(err);
                         }     
                     });
@@ -47,8 +50,18 @@ const MongoHelper = {
 
     findData: (collectionName, search) => {
         return new Promise((resolve, reject) => {
-            const db = client.db(dbName);
-            const collection = db.collection(collectionName || 'products');
+            MongoClient.connect(url, (err, client) => {
+                const db = client.db(dbName);
+                const collection = db.collection(collectionName || 'products');
+                collection.find(search).toArray((err, result) => {
+                    if (err) {
+                        reject(err);
+                    } else {
+                        // db.close();
+                        resolve(result);
+                    }
+                });
+            })
         });
     }
 }
