@@ -1,10 +1,10 @@
 let express = require('express');
 let users = express.Router();
+let mongoHelper = require('../util/helper/MongoHelper');
 
 const USER_COLLECTION = 'users';
 
 users.get('/', (req, res) => {
-    let mongoHelper = require('../util/helper/MongoHelper');
     let query = req.query;
     let search = query;
     // console.log(req);
@@ -19,7 +19,7 @@ users.get('/', (req, res) => {
 });
 
 users.post('/add', (req, res) => {
-    let mongoHelper = require('../util/helper/MongoHelper');
+    
     let data = req.body || null;
     if (data) {
         mongoHelper.insertData(USER_COLLECTION, data).then((data) => {
@@ -37,7 +37,7 @@ users.post('/add', (req, res) => {
 })
 
 users.post('/login', (req, res) => {
-    let mongoHelper = require('../util/helper/MongoHelper');
+    
     let criteria = req.body || null;
     if (criteria) {
         // Check user is exists or not

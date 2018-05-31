@@ -16,7 +16,7 @@ const dbName = 'simpleDB';
 // module.exports = MongoClient;
 const MongoHelper = {
     connect: () => {
-        MongoClient.connect(url, (err, client) => {
+        MongoClient.connect(url, { useNewUrlParser: true }, (err, client) => {
             if (!err) {
                 console.log('Connected successfully to server');
 
@@ -30,7 +30,7 @@ const MongoHelper = {
 
     insertData: (collectionName, data) => {
         return new Promise((resolve, reject) => {
-            MongoClient.connect(url, (err, client) => {
+            MongoClient.connect(url, { useNewUrlParser: true }, (err, client) => {
                 if (!err) {
                     const db = client.db(dbName);
                     const collection = db.collection(collectionName || 'products');
@@ -50,7 +50,7 @@ const MongoHelper = {
 
     findData: (collectionName, search) => {
         return new Promise((resolve, reject) => {
-            MongoClient.connect(url, (err, client) => {
+            MongoClient.connect(url, { useNewUrlParser: true }, (err, client) => {
                 const db = client.db(dbName);
                 const collection = db.collection(collectionName || 'products');
                 collection.find(search).toArray((err, result) => {

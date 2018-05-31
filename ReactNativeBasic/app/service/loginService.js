@@ -28,10 +28,10 @@ const LoginService = {
         // console.log(AppConfig.SERVER_URL);
         return new Promise((resolve, reject) => {
             fetch(`http://192.168.61.13:9090/users/login`, dataConfig).then((data) => {
-                resolve(data);
+                resolve(data.json());
             }).catch((error) => {
                 reject(error);
-            })
+            });
         });
         // return fetch(`${AppConfig.SERVER_URL}users/login`, dataConfig).then((response) => {
 
