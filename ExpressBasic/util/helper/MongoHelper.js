@@ -32,8 +32,9 @@ const MongoHelper = {
         return new Promise((resolve, reject) => {
             MongoClient.connect(url, { useNewUrlParser: true }, (err, client) => {
                 if (!err) {
+                    delete data._id;
                     const db = client.db(dbName);
-                    const collection = db.collection(collectionName || 'products');
+                    const collection = db.collection(collectionName);
                     collection.insertOne(data, (err, result) => {
                         if (!err) {
                             console.log(data);
@@ -51,13 +52,17 @@ const MongoHelper = {
     findData: (collectionName, search) => {
         return new Promise((resolve, reject) => {
             MongoClient.connect(url, { useNewUrlParser: true }, (err, client) => {
+                if(search._id) {
+                    search._id = ObjectID(search._id);
+                }
                 const db = client.db(dbName);
-                const collection = db.collection(collectionName || 'products');
+                const collection = db.collection(collectionName);
                 collection.find(search).toArray((err, result) => {
                     if (err) {
                         reject(err);
                     } else {
                         // db.close();
+                        console.log(result);
                         resolve(result);
                     }
                 });
@@ -65,6 +70,5 @@ const MongoHelper = {
         });
     }
 }
-
 
 module.exports = MongoHelper;

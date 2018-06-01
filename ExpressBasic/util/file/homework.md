@@ -5,3 +5,10 @@
 * List product API
 * Add new product API
 
+
+StackNavigator
+    + List category (Call from API /products/categories?id=1 )
+    + List product of category (/products/categories/)
+    + Get product infomation detail
+
+--> ProductStackNavigator --> TabNavigator
