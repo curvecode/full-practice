@@ -1,3 +1,4 @@
+/*jshint esversion: 6 */
 let express = require('express');
 let users = express.Router();
 let mongoHelper = require('../util/helper/MongoHelper');
@@ -15,7 +16,7 @@ users.get('/', (req, res) => {
         // res.send(error);
         res.status(500).send(error);
         res.end();
-    })
+    });
 });
 
 users.post('/add', (req, res) => {
@@ -34,7 +35,7 @@ users.post('/add', (req, res) => {
         res.status(500).send('Data is empty');
         res.end();
     }
-})
+});
 
 users.post('/login', (req, res) => {
     
@@ -59,8 +60,8 @@ users.post('/login', (req, res) => {
             res.status(500).send({
                 success: false,
                 message: 'Your account is not exists'
-            })
-        })
+            });
+        });
     } else {
         res.status(404).send({
             success: false,
@@ -68,6 +69,6 @@ users.post('/login', (req, res) => {
         });
         res.end();
     }
-})
+});
 
 module.exports = users;

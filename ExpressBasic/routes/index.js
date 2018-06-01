@@ -1,3 +1,4 @@
+/*jshint esversion: 6 */
 let express = require('express');
 let route = express.Router();
 
@@ -10,7 +11,7 @@ route.get('/', (req, res) => {
     }).catch((error) => {
         // res.status(500).error({ message: error });
         res.send(error);
-    })
+    });
 });
 
 route.post('', (req, res) => {

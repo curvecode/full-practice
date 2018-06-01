@@ -1,58 +1,50 @@
-// import ProductCategory from '../util/model/ProductCategory';
+/*jshint esversion: 6 */
 let express = require('express');
 let products = express.Router();
 let mongoHelper = require('../util/helper/MongoHelper');
-// let Category = require('../util/model/ProductCategory');
-// import ProductDetail from '../util/model/ProductDetail';
 const PRODUCT_CATEGORY_COL = 'categories';
 const PRODUCT_DETAIL_COL = 'products';
 
+let ProductService = require('../util/service/productService');
+
 products.get('', (req, res) => {
     res.send({});
+    res.end();
 });
 
 products.get('/categories', (req, res) => {
-    console.log('calling 123...');
     let param = req.query || {};
+    let productService = new ProductService();
+    let resultPromise;
     if (!param.id) {
-        // Get all category
-        mongoHelper.findData(PRODUCT_CATEGORY_COL, param).then((data) => {
-            if (Array.isArray(data) && data.length > 0) {
-                res.status(200).json(data);
-                res.end();
-            } else {
-                res.status(404).json({
-                    message: 'Category not found'
-                });
-            }
-        }).catch((error) => {
-            res.status(400).send(error);
-            res.end();
-        })
+        resultPromise = productService.getCategories(param);
     } else {
         // Get all product of category
-        let search = { catId: param.id };
-        mongoHelper.findData(PRODUCT_DETAIL_COL, search).then((data) => {
-            if (Array.isArray(data) && data.length > 0) {
-                res.status(200).json(data);
-                res.end();
-            } else {
-                res.status(404).json({
-                    message: 'Category not found'
-                });
-            }
-        }).catch((error) => {
-            res.status(400).send(error);
-            res.end();
-        })
+        let search = {
+            catId: param.id
+        };
+        resultPromise = productService.getProducts(param.id);
     }
+    resultPromise.then((data) => {
+        if (Array.isArray(data) && data.length > 0) {
+            res.status(200).json(data);
+            res.end();
+        } else {
+            res.status(404).json({
+                message: 'Data is not found'
+            });
+        }
+    }).catch((error) => {
+        res.status(400).send(error);
+        res.end();
+    });
 });
 
 products.get('/detail', (req, res) => {
     let param = req.query || {};
+    let productService = new ProductService();
     if (param.id) {
-        let search = { _id: param.id };
-        mongoHelper.findData(PRODUCT_DETAIL_COL, search).then((data) => {
+        productService.getProductDetail(param.id).then((data) => {
             if (Array.isArray(data) && data.length > 0) {
                 res.status(200).json(data);
                 res.end();
@@ -65,7 +57,7 @@ products.get('/detail', (req, res) => {
         }).catch((error) => {
             res.status(400).send(error);
             res.end();
-        })
+        });
     } else {
         res.status(404).json({
             message: 'Production not found'

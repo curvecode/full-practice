@@ -1,19 +1,5 @@
-// const ProductCategory = {
-//     _id = null,
-//     categoryName = null,
-//     init: (obj) => {
-//         if (!obj)
-//             return;
-//         this._id = obj._id || null;
-//         this.categoryName = obj.categoryName || null;
-//     }
-
-// }
-
+/*jshint esversion: 6 */
 class ProductCategory {
-    _id = '';
-    categoryName = '';
-
     constructor(obj) {
         if (!obj)
             return;
@@ -22,4 +8,4 @@ class ProductCategory {
     }
 }
 
-export default ProductCategory;
+module.exports = ProductCategory;

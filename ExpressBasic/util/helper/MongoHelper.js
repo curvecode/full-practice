@@ -1,3 +1,4 @@
+/*jshint esversion: 6 */
 const MongoClient = require('mongodb').MongoClient;
 const ObjectID = require('mongodb').ObjectID;
 
@@ -16,12 +17,12 @@ const dbName = 'simpleDB';
 // module.exports = MongoClient;
 const MongoHelper = {
     connect: () => {
-        MongoClient.connect(url, { useNewUrlParser: true }, (err, client) => {
+        MongoClient.connect(url, {
+            useNewUrlParser: true
+        }, (err, client) => {
             if (!err) {
                 console.log('Connected successfully to server');
-
                 const db = client.db(dbName);
-
                 // client.close();
                 // db.close();
             }
@@ -30,7 +31,9 @@ const MongoHelper = {
 
     insertData: (collectionName, data) => {
         return new Promise((resolve, reject) => {
-            MongoClient.connect(url, { useNewUrlParser: true }, (err, client) => {
+            MongoClient.connect(url, {
+                useNewUrlParser: true
+            }, (err, client) => {
                 if (!err) {
                     delete data._id;
                     const db = client.db(dbName);
@@ -42,7 +45,7 @@ const MongoHelper = {
                         } else {
                             // db.close();
                             reject(err);
-                        }     
+                        }
                     });
                 }
             });
@@ -51,8 +54,10 @@ const MongoHelper = {
 
     findData: (collectionName, search) => {
         return new Promise((resolve, reject) => {
-            MongoClient.connect(url, { useNewUrlParser: true }, (err, client) => {
-                if(search._id) {
+            MongoClient.connect(url, {
+                useNewUrlParser: true
+            }, (err, client) => {
+                if (search._id) {
                     search._id = ObjectID(search._id);
                 }
                 const db = client.db(dbName);
@@ -66,9 +71,9 @@ const MongoHelper = {
                         resolve(result);
                     }
                 });
-            })
+            });
         });
     }
-}
+};
 
 module.exports = MongoHelper;

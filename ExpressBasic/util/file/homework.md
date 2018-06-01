@@ -9,6 +9,6 @@
 StackNavigator
     + List category (Call from API /products/categories?id=1 )
     + List product of category (/products/categories/)
-    + Get product infomation detail
+    + Get product information detail
 
 --> ProductStackNavigator --> TabNavigator

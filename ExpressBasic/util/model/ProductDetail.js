@@ -1,8 +1,5 @@
-export default class ProductDetail {
-    _id = '';
-    productName = '';
-    price = 0;
-    catId = '';
+/*jshint esversion: 6 */
+class ProductDetail {
     constructor(obj) {
         if (!obj)
             return;
@@ -12,3 +9,5 @@ export default class ProductDetail {
         this.catId = obj.catId || null;
     }
 }
+
+module.exports = ProductDetail;
