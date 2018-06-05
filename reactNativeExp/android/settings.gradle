@@ -1,0 +1,3 @@
+rootProject.name = 'reactNativeExp'
+
+include ':app'
