@@ -27,7 +27,7 @@ export default class ShoppingCartScreen extends Component {
     removeProductInCart = () => {
 
     }
-    renderProductList = (product, index) => {
+    renderProductList = (product) => {
         return (
             <View style={commonStyles.category}>
                 <View style={{ alignItems: 'center', flex: 1, flexDirection: 'row', alignContent: 'center', alignSelf: 'center' }}>
@@ -42,7 +42,7 @@ export default class ShoppingCartScreen extends Component {
                 <View style={{ paddingLeft: 5, flex: 3 }}>
                     <Text>{product.productName}</Text>
                     <Text>{product.price}</Text>
-                    <TouchableOpacity onPress={(index) => { Alert.alert(`Remove this product: ${index}`) }}>
+                    <TouchableOpacity onPress={() => { Alert.alert(`Remove this product: ${product._id}`) }}>
                         <Icon name="trash" size={26} color="#f4511e" />
                     </TouchableOpacity>
                 </View>
@@ -58,7 +58,7 @@ export default class ShoppingCartScreen extends Component {
                     <FlatList
                         style={{}}
                         data={this.state.listProduct}
-                        renderItem={(product, index) => { return this.renderProductList(product.item, index) }}
+                        renderItem={(product) => { return this.renderProductList(product.item) }}
                         keyExtractor={(item, index) => String(item._id)}
                         ListEmptyComponent={() => { return this.showEmptyList() }}
                     />
