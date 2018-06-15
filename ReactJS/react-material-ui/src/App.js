@@ -3,13 +3,43 @@ import React, { Component } from 'react';
 import './App.css';
 // import Navbar from './components/navBarComponent';
 
-import { createStore } from 'redux';
+import { createStore, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
 import rootReducer from './counterApp/reducers/rootReducer';
 import CounterApp from './counterApp';
+import { composeWithDevTools } from 'redux-devtools-extension';
+
+// LOGGER MIDDLEWARE
+const logger = ({ getState }) => {
+    return next => action => {
+        console.log('will dispatch', action)
+
+        // Call the next dispatch method in the middleware chain.
+        const returnValue = next(action)
+
+        console.log('state after dispatch', getState())
+
+        // This will likely be the action itself, unless
+        // a middleware further in chain changed it.
+        return returnValue;
+    }
+}
+
+// MIDDLEWARE
+const middewares = [
+    // THUNK
+    // thunkMiddleware,
+
+    // PROMISE
+    // promise(),
+
+    // Custom Middleware
+    logger
+];
 
 const store = createStore(
-    rootReducer
+    rootReducer,
+    composeWithDevTools(applyMiddleware(...middewares))
 );
 
 class App extends Component {
