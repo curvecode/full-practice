@@ -34,3 +34,14 @@ Cach to chuc cay thu muc trong redux app
 + navigators
     - Nhung cac Container vao cac screen 
     - Neu su dung navigation thi minh can phai truyen options navigation vao cho Container de handle
+## 19/06/2018
+Firebase
+    + Cloud Firestore: luu du lieu vao cloud, no-sql
+    + Authentication
+    + Hosting
+    + Cloud Storage : Chua cac file media
+    + Realtme Database
+    + Cloud messaging
+    + Remote config: Config cac parameter tu xa, co the thiet lap condition de apply config change
+    + Dynamic links: Click vao link thi mo app den screen cu the (nhu minh da cau hinh)
+    + Cloud function : viet function khong qua server, sau do deploy len server. Co the them cac package khac vi du nhu la: expressjs

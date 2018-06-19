@@ -7,3 +7,5 @@ export const GET_LIST_PRODUCT = 'GET_LIST_PRODUCT';
 export const TOGGLE_CART = 'TOGGLE_CART';
 
 export const ADD_COUNTER = 'ADD_COUNTER';
+
+export const LOGIN = 'LOGIN';
