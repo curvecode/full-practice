@@ -19,3 +19,18 @@ Step:
 
 Tools:
 React native debugger
+
+// async await for react (like promise)
+redux-thunk
+redux-promise
+redux-saga
+    + Advance (Game online) complicated async
+    + 
+
+Cach to chuc cay thu muc trong redux app
++ modules
+    - Nhu la mot ung dung con (actions, reducers, containers, Components)
+    -
++ navigators
+    - Nhung cac Container vao cac screen 
+    - Neu su dung navigation thi minh can phai truyen options navigation vao cho Container de handle

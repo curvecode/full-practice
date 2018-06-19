@@ -10,6 +10,10 @@ const counterReducer = (state = { count: 0 }, action) => {
             return Object.assign({}, state, {
                 count: state.count - action.num
             });
+        // case ActionType.ADD_COUNTER:
+        //     return Object.assign({}, state, {
+        //         count: state.count + action.num
+        //     })
         default:
             return state;
     }
