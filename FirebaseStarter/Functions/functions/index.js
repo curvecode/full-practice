@@ -133,7 +133,7 @@ exports.addCitizen = functions.https.onRequest((request, response) => {
 exports.getCitizen = functions.https.onRequest((request, response) => {
     console.log('Get citizen');
 
-    db.collection('cities').get().then(snapshot => {
+    db.collection('cities').orderBy('born', 'desc').get().then(snapshot => {
         var arrData = [];
         snapshot.forEach(citizen => {
             arrData.push(citizen.data());
