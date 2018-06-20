@@ -1,0 +1,64 @@
+{
+  "employees": [
+    {
+      "id": 1,
+      "first_name": "Sebastian",
+      "last_name": "Eschweiler",
+      "email": "sebastian@codingthesmartway.com"
+    },
+    {
+      "id": 2,
+      "first_name": "Steve",
+      "last_name": "Palmer",
+      "email": "steve@codingthesmartway.com"
+    },
+    {
+      "first_name": "Steve",
+      "last_name": "Thanh",
+      "email": "steve@codingthesmartway.com",
+      "id": 3
+    },
+    {
+      "first_name": "Steve",
+      "last_name": "Thanh",
+      "email": "steve@codingthesmartway.com",
+      "id": 4
+    },
+    {
+      "first_name": "Steve",
+      "last_name": "Jobs",
+      "email": "stevejob@codingthesmartway.com",
+      "id": 5
+    },
+    {
+      "first_name": "Steve",
+      "last_name": "Thanh",
+      "email": "steve@codingthesmartway.com",
+      "id": 6
+    },
+    {
+      "first_name": "Steve",
+      "last_name": "Thanh",
+      "email": "steve@codingthesmartway.com",
+      "id": 7
+    },
+    {
+      "first_name": "Steve",
+      "last_name": "Thanh",
+      "email": "steve@codingthesmartway.com",
+      "id": 8
+    },
+    {
+      "first_name": "Steve",
+      "last_name": "Thanh",
+      "email": "steve@codingthesmartway.com",
+      "id": 9
+    },
+    {
+      "first_name": "Steve",
+      "last_name": "Thanh",
+      "email": "steve@codingthesmartway.com",
+      "id": 10
+    }
+  ]
+}

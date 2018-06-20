@@ -1,0 +1,45 @@
+[debug] [2018-06-20T07:26:47.469Z] ----------------------------------------------------------------------
+[debug] [2018-06-20T07:26:47.471Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\ltthanh\AppData\Roaming\npm\node_modules\firebase-tools\bin\firebase serve --only functions
+[debug] [2018-06-20T07:26:47.471Z] CLI Version:   3.16.0
+[debug] [2018-06-20T07:26:47.471Z] Platform:      win32
+[debug] [2018-06-20T07:26:47.471Z] Node Version:  v8.9.1
+[debug] [2018-06-20T07:26:47.472Z] Time:          Wed Jun 20 2018 14:26:47 GMT+0700 (SE Asia Standard Time)
+[debug] [2018-06-20T07:26:47.472Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2018-06-20T07:26:47.482Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2018-06-20T07:26:47.482Z] > authorizing via signed-in user
+[debug] [2018-06-20T07:26:47.484Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2018-06-20T07:26:47.484Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ { refresh_token: '1/S2RFp6asWZTAXTdaOq_UzGH1WBQ2focrpBu7vcyEyE0',
+  client_id: '563584335869-fgrhgmd47bqnekij5i8b5pr03ho849e6.apps.googleusercontent.com',
+  client_secret: 'j9iVZfS8kkCEFUPaAeJV0sAi',
+  grant_type: 'refresh_token',
+  scope: 'email https://www.googleapis.com/auth/cloud-platform https://www.googleapis.com/auth/cloudplatformprojects.readonly https://www.googleapis.com/auth/firebase openid' } 
+ Wed Jun 20 2018 14:26:47 GMT+0700 (SE Asia Standard Time)
+[debug] [2018-06-20T07:26:47.692Z] <<< HTTP RESPONSE 200
+[debug] [2018-06-20T07:26:47.695Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects/ngfirestore-2a81f  
+  
+ Wed Jun 20 2018 14:26:47 GMT+0700 (SE Asia Standard Time)
+[debug] [2018-06-20T07:26:48.640Z] <<< HTTP RESPONSE 200
+[debug] [2018-06-20T07:26:48.640Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/database/ngfirestore-2a81f/tokens  
+  
+ Wed Jun 20 2018 14:26:48 GMT+0700 (SE Asia Standard Time)
+[debug] [2018-06-20T07:26:49.420Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Serving from 'd:\learn\full-practice\FirebaseStarter\Functions'...
+[info] 
+[info] i  functions: Preparing to emulate functions.
+[debug] [2018-06-20T07:26:50.589Z] >>> HTTP REQUEST GET https://appengine.googleapis.com/v1/apps/ngfirestore-2a81f  
+  
+ Wed Jun 20 2018 14:26:50 GMT+0700 (SE Asia Standard Time)
+[debug] [2018-06-20T07:26:50.589Z] >>> HTTP REQUEST GET https://apikeys.googleapis.com/v1/projects/ngfirestore-2a81f/apiKeys  
+  
+ Wed Jun 20 2018 14:26:50 GMT+0700 (SE Asia Standard Time)
+[debug] [2018-06-20T07:26:51.915Z] <<< HTTP RESPONSE 200
+[debug] [2018-06-20T07:26:52.327Z] <<< HTTP RESPONSE 200
+[info] +  functions: helloWorld: http://localhost:5000/ngfirestore-2a81f/us-central1/helloWorld
+[info] +  functions: addPost: http://localhost:5000/ngfirestore-2a81f/us-central1/addPost
+[info] +  functions: getPosts: http://localhost:5000/ngfirestore-2a81f/us-central1/getPosts
+[info] +  functions: deletePost: http://localhost:5000/ngfirestore-2a81f/us-central1/deletePost
+[info] +  functions: addCitizen: http://localhost:5000/ngfirestore-2a81f/us-central1/addCitizen
+[info] +  functions: getCitizen: http://localhost:5000/ngfirestore-2a81f/us-central1/getCitizen
