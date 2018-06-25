@@ -1,7 +1,7 @@
 import React from 'react';
-import { StyleSheet, Text, View, ScrollView, TextInput, Button, FlatList, ActivityIndicator } from 'react-native';
+import { StyleSheet, Text, View, ScrollView, TextInput, Button, FlatList, ActivityIndicator, TouchableOpacity } from 'react-native';
 import firebase from 'react-native-firebase';
-
+import styles from './src/components/styles/common';
 export default class App extends React.Component {
   constructor(props) {
     super(props);
@@ -79,7 +79,7 @@ export default class App extends React.Component {
         createdTime
       });
       this.setState({
-        todos : todos,
+        todos: todos,
         loading: false,
       });
     });
@@ -87,7 +87,27 @@ export default class App extends React.Component {
 
   renderTodo(item) {
     return (
-      <Text>{item.title}</Text>
+      // <View>
+      //   <Text>{item.title}</Text>
+      //   <TouchableOpacity onPress={() => { alert('Complete it!'); }}>
+      //     <Text>Complete</Text>
+      //   </TouchableOpacity>
+      // </View>
+
+      <View style={styles.wrapper}>
+        <View style={styles.thumbnailView}>
+          <Image source={{ uri: props.image.thumbUrl }} style={styles.thumbnail} />
+        </View>
+        <View style={styles.detailsView}>
+          <ProductName name={name} />
+          <RatingView rating={reviewScore} reviewCount={reviewCount} style={styles.rating} />
+          <PriceText price={offer.price} salePrice={offer.salePrice} style={styles.priceText} />
+          <View style={styles.shipping}>
+            <Text style={styles.shippingText}>{`${rn({ min: 2, max: 7, integer: true })} Days Shipping`}</Text>
+          </View>
+        </View>
+
+      </View>
     );
   }
 
@@ -126,37 +146,3 @@ export default class App extends React.Component {
     );
   }
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1
-  },
-  logo: {
-    height: 80,
-    marginBottom: 16,
-    marginTop: 32,
-    width: 80,
-  },
-  welcome: {
-    fontSize: 20,
-    textAlign: 'center',
-    margin: 10,
-  },
-  instructions: {
-    textAlign: 'center',
-    color: '#333333',
-    marginBottom: 5,
-  },
-  modules: {
-    margin: 20,
-  },
-  modulesHeader: {
-    fontSize: 16,
-    marginBottom: 8,
-  },
-  module: {
-    fontSize: 14,
-    marginTop: 4,
-    textAlign: 'center',
-  }
-});
