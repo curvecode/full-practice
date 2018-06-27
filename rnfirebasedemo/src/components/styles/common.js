@@ -29,7 +29,7 @@ const styles = StyleSheet.create({
         height: 90
     },
     detailsView: {
-        flex: 1,
+        // flex: 1,
     },
 
     shipping: {
@@ -55,4 +55,4 @@ const styles = StyleSheet.create({
     }
 });
 
-exports default styles;
+export default styles;
