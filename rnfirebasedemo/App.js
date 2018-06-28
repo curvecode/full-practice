@@ -165,17 +165,17 @@ export default class App extends React.Component {
                 loading: false,
             });
         });
-        const notification = new firebase.notifications.Notification();
-        notification.setTitle('Have new update data');
-        notification.setBody('You have a new todo');
-        notification.android.setChannelId('default');
-        notification.android.setColor('blue');
-        notification.setSound('default');
-        firebase.notifications().displayNotification(notification).then(result => {
-            console.log(result);
-        }).catch(error => {
-            console.log('Error :', error);
-        });
+        // const notification = new firebase.notifications.Notification();
+        // notification.setTitle('Have new update data');
+        // notification.setBody('You have a new todo');
+        // notification.android.setChannelId('default');
+        // notification.android.setColor('blue');
+        // notification.setSound('default');
+        // firebase.notifications().displayNotification(notification).then(result => {
+        //     console.log(result);
+        // }).catch(error => {
+        //     console.log('Error :', error);
+        // });
     }
 
     updateTaskCompleted(key, status) {
@@ -273,6 +273,27 @@ export default class App extends React.Component {
                                 }).catch(error => {
                                     console.log('Show error', error);
                                 });
+                            }}
+                        />
+                        <Button
+                            title="Set schedule for notification"
+                            onPress={() => {
+                                try {
+                                    const notification = new firebase.notifications.Notification();
+    
+                                    notification.setTitle('Schedule notification');
+                                    notification.setBody('This is content');
+                                    notification.setSound('default');
+                                    notification.android.setChannelId('default');
+    
+                                    const date = new Date();
+                                    date.setSeconds(date.getSeconds() + 10);
+                                    firebase.notifications().scheduleNotification(notification, {
+                                        fireDate: date.getTime()
+                                    });
+                                } catch (error) {
+                                    console.log(error);
+                                }
                             }}
                         />
                     </View>

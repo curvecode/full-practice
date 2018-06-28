@@ -5,6 +5,8 @@ const notificationService = {
     initApp() {
         // alert('Come here');
         // Check permission
+        const channel = new firebase.notifications.Android.Channel('default', 'Default Channel', firebase.notifications.Android.Importance.Max);
+        channel.setDescription('My default channel');
         firebase.messaging().hasPermission().then(permission => {
             if (!permission) {
                 firebase.messaging().requestPermission().then(data => {
@@ -32,7 +34,8 @@ const notificationService = {
 
     saveTokenNotification(token) {
         firebase.firestore().collection('tokens').add({
-            value: token
+            value: token,
+            createdDate: new Date().toUTCString()
         });
     },
 
