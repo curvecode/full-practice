@@ -1,3 +1,3 @@
 import { AppRegistry } from 'react-native';
-import App from './App';
-AppRegistry.registerComponent('firstrnfirebase', () => App);
+import StackScreenComponent from './src/components/stackScreen';
+AppRegistry.registerComponent('firstrnfirebase', () => StackScreenComponent);

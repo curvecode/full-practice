@@ -87,3 +87,4 @@ Cac bai tap can lam:
 Dich vu dam may ve notification cho web : OneSignal, AWS, MS
 
 - Khi app dang killer co message den thi khi click vao notification thi se co su kien getInitialNotification
+- React Native Element
