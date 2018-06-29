@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { StyleSheet, Image, Text, TextInput, View, TouchableOpacity, Dimensions, Alert } from 'react-native';
+import firebase from 'react-native-firebase';
 
 var { width, height } = Dimensions.get('window');
 const userData = {
@@ -36,6 +37,7 @@ export default class LoginComponent extends Component {
     render() {
         return (
             <View style={styles.container}>
+                {firebase.messaging.nativeModuleExists && <Text style={styles.module}>Cloud Messaging</Text>}
                 <Image source={require('../../assets/image/bg.jpg')} resizeMode={'cover'} style={{
                     position: 'absolute',
                     top: 0,
