@@ -12,12 +12,12 @@ export const addToCart = (product) => {
     return ({
         type: ActionTypes.ADD_TO_CART,
         product: product
-    })
-}
+    });
+};
 
 export const getListProduct = () => {
     return ({
         type: ActionTypes.GET_LIST_PRODUCT,
         products: products
-    })
-}
+    });
+};

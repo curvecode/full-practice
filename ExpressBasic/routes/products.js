@@ -99,11 +99,31 @@ products.post('/detail', (req, res) => {
     }
 });
 
-products.put('', (req, res) => {
+/**
+ * @api Update name of category
+ */
+products.put('/categories', (req, res) => {
 
 });
 
-products.delete('', (req, res) => {
+/**
+ * @api Delete category with id
+ */
+products.delete('/categories/:id', (req, res) => {
+
+});
+
+/**
+ * @api Update product info
+ */
+products.put('/detail', (req, res) => {
+
+});
+
+/**
+ * @api Delete product with id
+ */
+products.delete('/detail/:id', (req, res) => {
 
 });
 

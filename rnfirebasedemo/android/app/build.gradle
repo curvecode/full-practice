@@ -152,8 +152,8 @@ dependencies {
     }
 
     // RNFirebase required dependencies
-    implementation "com.google.firebase:firebase-core:15.0.2"
     implementation "com.google.android.gms:play-services-base:15.0.0"
+    implementation "com.google.firebase:firebase-core:15.0.2"
 
     // RNFirebase optional dependencies
     implementation "com.google.firebase:firebase-ads:15.0.0"
