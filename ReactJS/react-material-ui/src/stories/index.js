@@ -31,3 +31,5 @@ storiesOf('Button', module)
 
 storiesOf('HelloComp', module)
   .add('hello', () => <HelloComp />);
+
+storiesOf('Simple button', module).add('Simple', () => <Button onClick={action('Kich chuot')}>Simple</Button>);
