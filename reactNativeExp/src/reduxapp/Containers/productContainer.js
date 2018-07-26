@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { getListProduct } from '../Actions/productAction';
+import { getListProduct, addToCart } from '../Actions/productAction';
 import ProductComponent from '../Components/productComponent';
 
 const mapStateToProps = (state) => ({
@@ -7,7 +7,8 @@ const mapStateToProps = (state) => ({
 });
 
 const mapDispatchToProps = (dispatch) => ({
-    getListProduct: () => dispatch(getListProduct())
+    getListProduct: () => dispatch(getListProduct()),
+    addToCart: () => dispatch(addToCart())
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(ProductComponent);

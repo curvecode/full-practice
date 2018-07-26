@@ -20,6 +20,7 @@ export default class ProductComponent extends Component {
             done: true // TODO: should be false when have request to API
         };
         this.props.getListProduct();
+        console.log(this.props);
     }
 
     renderProductList = (product) => {

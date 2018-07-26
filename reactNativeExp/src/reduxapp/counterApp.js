@@ -8,8 +8,8 @@ export default class CounterApp extends Component {
     render() {
         return (
             <View style={{flex: 1}}>
-                <CounterContainer />
-                <TotalContainer />
+                {/* <CounterContainer /> */}
+                {/* <TotalContainer /> */}
                 <ProductContainer />
             </View>
         );

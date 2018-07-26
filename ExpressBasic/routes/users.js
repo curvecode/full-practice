@@ -59,7 +59,7 @@ users.post('/login', (req, res) => {
         }).catch((error) => {
             res.status(500).send({
                 success: false,
-                message: 'Your account is not exists'
+                message: error.message || 'Your account is not exists'
             });
         });
     } else {

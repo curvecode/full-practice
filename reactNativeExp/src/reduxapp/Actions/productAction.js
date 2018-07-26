@@ -11,7 +11,7 @@ const products = [
 export const addToCart = (product) => {
     return ({
         type: ActionTypes.ADD_TO_CART,
-        product: product
+        storeProduct: product
     });
 };
 
@@ -21,3 +21,9 @@ export const getListProduct = () => {
         products: products
     });
 };
+
+export const getListProductFromAPI = () => {
+    return ({
+
+    });
+}

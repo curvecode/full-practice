@@ -14,6 +14,11 @@ const productReducer = (state = defaultState, action) => {
                 ...state,
                 products: action.products
             }
+        case ActionTypes.ADD_TO_CART:
+            return {
+                ...state,
+                addedProducts: addedProducts.push(action.storeProduct)
+            }
         default:
             return state;
     }
