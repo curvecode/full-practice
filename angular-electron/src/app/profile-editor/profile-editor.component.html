@@ -2,7 +2,7 @@
   <h2>Profile form group :</h2>
   <form [formGroup]="profileForm" (ngSubmit)="onSubmit()">
     <p class="form-control">
-      <label for="firstName">First name: <input formControlName="firstName" /></label>
+      <label for="firstName">First name: <input formControlName="firstName" required/></label>
     </p>
     <p>
       <label for="lastName">Last name: <input formControlName="lastName" /></label>

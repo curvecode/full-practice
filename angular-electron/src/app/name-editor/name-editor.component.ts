@@ -11,10 +11,11 @@ export class NameEditorComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    this.updateName();
   }
 
   updateName() {
-    this.name.setValue('Nancy');
+    this.name.setValue('Nancy Ahihi');
   }
 
 }
