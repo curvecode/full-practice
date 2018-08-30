@@ -1,0 +1,7 @@
+{
+  "name": "ioniclearning",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "ionic-angular"
+}
