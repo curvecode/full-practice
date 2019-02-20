@@ -1,0 +1,35 @@
+<!doctype html>
+<html>
+    <head>
+        <title>Say something</title>
+    </head>
+    <body>
+        <div id="app">
+            <h1>{{ message }}</h1>
+            <div class="age">{{age > 60 ? 'Old' : 'Young'}}</div>
+            <div>{{ getFullName().name }}</div>
+            <div class="blog">Blog Link <a v-bind:href="blogUrl">AHIHI</a></div>
+
+        </div>
+        <!-- development version, includes helpful console warnings -->
+        <!-- <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script> -->
+        <!-- production version, optimized for size and speed -->
+        <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+        <script>
+            new Vue({
+                el: '#app',
+                data: {
+                    message: 'Konichiwa',
+                    age: 20,
+                    blogUrl: 'https://google.com.vn'
+                },
+                methods: {
+                    getFullName: function() {
+                        console.log(this);
+                        return {name: 'ABC'}; 
+                    }
+                }
+            })
+        </script>
+    </body>
+</html>
