@@ -5,8 +5,8 @@ import React, { Component } from 'react';
 // import InputNumberContainer from './containers/inputNumberContainer';
 import Navbar from '../components/navBarComponent';
 // import SimpleCard from '../components/simpleCard';
-// import ListTask from '../components/listTaskComp';
-import AuthFirebase from './../components/authWithFirebase';
+import ListTask from '../components/listTaskComp';
+// import AuthFirebase from './../components/authWithFirebase';
 
 export default class CounterApp extends Component {
     render() {
@@ -17,8 +17,8 @@ export default class CounterApp extends Component {
                 {/* <TotalContainer /> */}
                 {/* <InputNumberContainer /> */}
                 {/* <SimpleCard /> */}
-                {/* <ListTask /> */}
-                <AuthFirebase />
+                <ListTask />
+                {/* <AuthFirebase /> */}
             </div>
         )
     }
