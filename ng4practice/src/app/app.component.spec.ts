@@ -29,4 +29,8 @@ describe('AppComponent', () => {
     const compiled = fixture.debugElement.nativeElement;
     expect(compiled.querySelector('h1').textContent).toContain('app works!');
   }));
+
+  it('should 1 equal 1', () => {
+    expect(1).toEqual(1);
+  });
 });
