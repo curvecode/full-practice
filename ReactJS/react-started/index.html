@@ -1,0 +1,44 @@
+<html>
+  <head>
+    <title>Hello</title>
+    <style>
+      .header {
+        color: red;
+        font-size: 24px;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <!-- <h1>Chao ban</h1> -->
+      <div id="app"></div>
+    </div>
+    <script crossorigin src="https://unpkg.com/react@16/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.26.0/babel.js"></script>
+    <script type="text/babel">
+      // const Header = React.createElement('h1', null, 'Hello from react');
+      const Header = <h1>Hello from react</h1>;
+      const Clock = function(props) {
+        console.log('Props : ', props);
+        
+        // return `Now is ::: ${new Date().toString()}`;
+        return <h1 className="header">This clock has name {props.name} {new Date().toString()}</h1>;
+      };
+
+      const InsideClock = function(props) {
+        return <p style={{color: props.color}}>This is an paragraph</p>;
+      };
+
+      const App = function() {
+        return <div>
+          <InsideClock color="#0000ff"/>
+          <Clock name="Russia" />
+          <Clock name="VietName" />
+        </div>;
+      }
+      // ReactDOM.render(Header, document.getElementById('app'));
+      ReactDOM.render(<App />, document.getElementById('app'));
+    </script>
+  </body>
+</html>
