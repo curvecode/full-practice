@@ -32,9 +32,9 @@ jobs:
           paths:
             - node_modules
           key: v1-dependencies-{{ checksum "package.json" }}
-      - run:
-          name: 'Test Project'
-          command: 'npm run test'
+      # - run:
+      #     name: 'Test Project'
+      #     command: 'npm run test'
       - run:
           name: 'Build Project'
           command: 'npm run build'

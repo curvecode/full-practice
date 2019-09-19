@@ -1,4 +1,4 @@
-package com.curvecode.firstrnfirebase;
+package com.firstrnfirebase;
 
 import com.facebook.react.ReactActivity;
 
